@@ -6,6 +6,11 @@ spring:
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1/springcloud_sell?characterEncoding=utf8&useSSL=false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 env:
   test4
 girl:
