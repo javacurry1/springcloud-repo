@@ -1,10 +1,12 @@
-spring:
-  application:
-    name: api-gateway
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
-    url: jdbc:mysql://127.0.0.1/springcloud_sell?characterEncoding=utf8&useSSL=false
-env:
-  dev
+zuul:
+  routes:
+     myProduct:
+        path: /myProduct/**
+        serviceId: product
+        sensitiveHeaders:
+#排除某些路由
+  ignored-patterns:
+     - /**/product/listForOrder
+management:
+  security:
+    enabled: false
